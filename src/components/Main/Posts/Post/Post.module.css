@@ -1,0 +1,35 @@
+.post{
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid rgb(161, 161, 161);
+    width: 100%;
+}
+
+.body{
+    padding: 15px;
+    background-color: #fff;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(70, 70, 70);
+    margin: 0px 30px 0px 0px;
+}
+
+.name{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text{
+    font-size: 14px;
+    line-height: 20px;
+}

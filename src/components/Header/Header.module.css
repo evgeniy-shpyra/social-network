@@ -1,0 +1,31 @@
+
+.header{
+    flex: 0 0 80px;
+    background-color: rgb(227, 253, 153);
+    margin: 0px 0px 15px 0px;
+}
+
+.container{
+    height: 100%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoDiv {
+    height: 60px;
+    width: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.list {
+    display: flex;
+}
+
+.link {
+    margin: 0 15px;
+    font-size: 18px;
+    color: #000
+}

@@ -1,0 +1,20 @@
+.sidebar{
+    flex: 0 0 220px;
+    padding: 0 7.5px;
+}
+    
+.body{    
+    background-color: rgb(246, 161, 161);
+    height: 100%;
+}
+
+.list{
+    padding: 30px 20px;
+}
+
+.item{
+    font-size: 18px;
+    color: #000;
+    margin: 0px 0px 10px 0px;
+}
+

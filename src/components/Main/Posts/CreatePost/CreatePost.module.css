@@ -1,0 +1,43 @@
+.body{
+    padding: 25px 30px;
+    margin: 0px 0px 15px 0px;
+    background-color: #fff;
+}
+
+.lable{
+    font-size: 16px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #000;
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid #F4F4F4;
+}
+
+.form{
+    padding: 20px 0px 1px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -10px;
+}
+
+.post{
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+    margin: 0px 20px 0px 0px;
+    font-size: 16px;
+    padding: 10px;
+    color: #000;
+}
+
+.button{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(187, 187, 187);
+}
+
+.newPost{
+
+}
