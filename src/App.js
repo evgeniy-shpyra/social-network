@@ -7,13 +7,13 @@ import ProFile from './components/ProFile/ProFile';
 
 
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="wrapper">
       <Header />
       <main className="mainContent">
         <Sidebar />
-        <ProFile />
+        <ProFile persons={props.persons} dialogs={props.dialogs} posts={props.posts}/>
         <User />
       </main>
       <Footer />

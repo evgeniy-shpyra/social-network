@@ -5,10 +5,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+let persons = [
+  {id: 1, name: "Artur"},
+  {id: 2, name: "Evgeniy"}
+];
+let dialogs = [
+  {id: 1, message: "Hello", time: "09:12"},
+  {id: 2, message: "Hi", time: "21:12"}
+];
+
+let posts = [
+  {id: 1, name: "Evgeniy", text: "culpa, accusamus blanditiis, soluta obcaecati ab! Eaque voluptate id ullam?"},
+  {id: 2, name: "Vasa", text: "culpa, accusamus blanditiis, soluta obcaecati e voluptate id ullam?"},
+  {id: 3, name: "Dima", text: " soluta obcaecati ab! Eaque voluptate id ullam?"}
+];
+
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <App dialogs={dialogs} persons={persons} posts={posts}/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

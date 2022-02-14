@@ -1,16 +1,16 @@
 import s from "./ProFile.module.css";
 import Massages from "./Massages/Massages";
 import Posts from "./Posts/Posts";
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 
-const ProFile = () => {
+const ProFile = (props) => {
+    
     return (
         <section className={s.container}>
             <div className={s.body}>
-                {/* <Massages />  */}
                 <Routes>
-                    <Route path="/massages" element={<Massages />} />
-                    <Route path="/posts" element={<Posts />} />
+                    <Route exact path="/massages/*" element={<Massages persons={props.persons} dialogs={props.dialogs} />} />
+                    <Route path="/posts" element={<Posts posts={props.posts} />} />
                 </Routes>
             </div>
         </section>

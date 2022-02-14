@@ -12,6 +12,16 @@
     padding: 30px 20px;
 }
 
+
+
+.item{
+    color: #000;
+}
+
+.active{
+    color: rgb(209, 0, 0);
+}
+
 .item{
     font-size: 18px;
     color: #000;

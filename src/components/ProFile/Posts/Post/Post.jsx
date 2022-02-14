@@ -9,7 +9,7 @@ const Post = (props) => {
                     <div className={s.avatar}></div>
                     <div className={s.name}>{props.name}</div>
                 </div>
-                <div className={s.text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero reprehenderit nobis eligendi eaque. Exercitationem possimus provident fugit eius omnis obcaecati ad distinctio unde hic atque. Dignissimos pariatur illo veniam velit. </div>
+                <div className={s.text}>{props.text}</div>
             </div>
         </section>
     );

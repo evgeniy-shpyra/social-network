@@ -1,6 +1,6 @@
 import s from "./Sidebar.module.css";
 
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
 
 
 const Sidebar = () => {
@@ -9,10 +9,10 @@ const Sidebar = () => {
             <nav className={s.body}>
                 <ul className={s.list}>
                     <li className={s.item}>
-                        <Link to="/posts">Posts</Link>
+                        <NavLink to="/posts" className = { navData => navData.isActive ? s.active : s.item}>Posts</NavLink>
                     </li>
                     <li className={s.item}>
-                        <Link to="/massages">Massages</Link>
+                        <NavLink to="/massages" className = {navData => navData.isActive ? s.active : s.item}>Massages</NavLink>
                     </li>
                     <li className={s.item}>Line</li>
                     <li className={s.item}>Line</li>

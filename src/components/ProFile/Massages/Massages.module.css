@@ -1,4 +1,17 @@
 
 .body{
     height: 100%;
+    display: grid;
+    grid-template: 1fr / 1fr 3fr;
+    gap: 10px;
+}
+
+
+
+.person{
+    background-color: rgb(155, 135, 245);
+}
+
+.massages{
+    background-color: rgb(240, 144, 211);
 }
