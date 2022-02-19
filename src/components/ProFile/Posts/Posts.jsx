@@ -4,11 +4,11 @@ import Post from './Post/Post';
 
 const Posts = (props) => {
 
-    let postsElements = props.posts.map(p => <Post name={p.name} text={p.text}/>)
+    let postsElements = props.postsPage.posts.map(p => <Post name={p.name} text={p.text}/>)
 
     return (
         <div className={s.body}>
-            <CreatePost />
+            <CreatePost dispatch={props.dispatch} newPostText={props.postsPage.newPostText} />
             {postsElements}
         </div>
     );

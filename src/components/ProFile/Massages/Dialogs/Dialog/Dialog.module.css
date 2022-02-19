@@ -1,0 +1,43 @@
+.item{
+    display: block;
+    margin: 0 5px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #505050;
+    letter-spacing: 1px;
+}
+
+.active{
+    background: #0E6EFF;
+    color: #fff;
+}
+
+.body{
+    padding: 10px 10px;
+    
+    display: flex;
+    
+}
+
+.avatar{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: rgb(98, 98, 98);
+    margin: 0px 10px 0px 0px;
+}
+
+.info{
+    padding: 5px 0;
+}
+
+.name{
+    color: inherit;
+    font-weight: 600;
+}
+
+.text{
+
+}
+

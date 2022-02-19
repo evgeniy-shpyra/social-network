@@ -1,31 +1,85 @@
 
-.header{
-    flex: 0 0 80px;
-    background-color: rgb(227, 253, 153);
-    margin: 0px 0px 15px 0px;
+.container{
+    width: 100%;
+    margin: 0px 0px 20px 0px;
 }
 
-.container{
+.body{
     height: 100%;
-    margin: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logoDiv {
-    height: 60px;
-    width: 60px;
-    background-color: #fff;
-    border-radius: 50%;
+.logo{
+    display: flex;
+    align-items: center;
+    margin: 0px 20px 0px 0px;
 }
 
-.list {
+.logoLable{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    width: 31px;
+    height: 31px; 
+    gap: 7px;
+    margin: 0px 25px 0px 0px;
+}
+
+.cube{
+    width: 12px;
+    height: 12px; 
+    background: #171B1E;
+    border-radius: 2px;
+}
+
+.logoText {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 62px;
+    color: #171B1E;
+}
+
+.info{
+    
+}
+
+.bell{
+
+}
+
+.mail{
+
+}
+
+.profile{
     display: flex;
 }
 
-.link {
-    margin: 0 15px;
-    font-size: 18px;
-    color: #000
+.avatar{
+    width: 60px;
+    height: 60px;
+    margin: 0px 20px 0px 0px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+}
+
+.email{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #72757A;
 }

@@ -1,0 +1,29 @@
+.body{
+    flex: 0 1 300px;
+    border-right: 3px solid rgb(199, 199, 199);
+}
+
+.searchDialog{
+    font-family: Manrope;
+    margin: 20px 15px 20px 15px;
+    height: 35px;
+    display: flex;
+    border-radius: 8px;
+    background-color: #E5E5E5;
+    overflow: hidden;
+}
+
+.input{
+    color: rgb(82, 82, 83);
+    background-color: #E5E5E5;
+    height: 100%;
+    width: 100%;
+    margin: 0px 5px 0px 0px;
+    padding: 0px 10px;    
+}
+
+.button{
+    color: rgb(82, 82, 83);
+    margin: 0px 10px;
+    background-color:#E5E5E5;
+}

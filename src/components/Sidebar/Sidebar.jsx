@@ -1,26 +1,20 @@
 import s from "./Sidebar.module.css";
 
-import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import ItemMenu from "./ItemMenu/ItemMenu";
 
+const Sidebar = (props) => {
+    
+    let itemsMenuElements = props.menu.menuItems.map( i => <ItemMenu body={i.body} dispatch={props.dispatch} />)
 
-const Sidebar = () => {
     return (
-        <aside className={s.sidebar}>
-            <nav className={s.body}>
-                <ul className={s.list}>
-                    <li className={s.item}>
-                        <NavLink to="/posts" className = { navData => navData.isActive ? s.active : s.item}>Posts</NavLink>
-                    </li>
-                    <li className={s.item}>
-                        <NavLink to="/massages" className = {navData => navData.isActive ? s.active : s.item}>Massages</NavLink>
-                    </li>
-                    <li className={s.item}>Line</li>
-                    <li className={s.item}>Line</li>
+        <aside className={s.container}> 
+            <nav className={s.body}> 
+                <ul className={s.list}> 
+                    {itemsMenuElements} 
                 </ul>
             </nav>
-            
         </aside>
-
     );
 };
 
