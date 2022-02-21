@@ -1,7 +1,6 @@
 import s from "./CreatePost.module.css";
-import { useRef } from 'react';
-import { updateNewPostAction } from "../../../../Redux/state";
-import { addPost } from './../../../../Redux/state';
+import { updateNewPostAction, addPost } from "../../../Redux/store";
+
 
 const CreatePost = (props) => {
 

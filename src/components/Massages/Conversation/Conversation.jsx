@@ -1,7 +1,7 @@
 import s from "./Conversation.module.css";
 import Message from "./Message/Message";
 import { useRef } from 'react';
-import { addMessageAction, updateNewMassageAction } from './../../../../Redux/state';
+import { addMessageAction, updateNewMassageAction } from '../../../Redux/store';
 
 const Conversation = (props) => {
 

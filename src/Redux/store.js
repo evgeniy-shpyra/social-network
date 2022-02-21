@@ -16,31 +16,31 @@ let store = {
             ],
             activeMenu: ""
         },
-        profilePage: {
-            messagesPage: {
-                dialogs: [
-                    { id: 1, name: "Dima" },
-                    { id: 2, name: "Nazar" },
-                    { id: 3, name: "Artur" },
-                    { id: 4, name: "Vika" },
-                    { id: 5, name: "Luda" }
-                ],
-                messages: [
-                    { id: 1, text: "Hello", time: "09:12", isMyMessage: true },
-                    { id: 2, text: "Hi", time: "21:12", isMyMessage: false },
-                    { id: 3, text: "My name is Evgeniy", time: "09:12", isMyMessage: true },
-                    { id: 4, text: "yo", time: "21:12", isMyMessage: false }
-                ],
-                newMessageText: {text: ""}
-            },
-            postsPage: {
-                posts: [
-                    { id: 1, name: "Evgeniy", text: "culpa, accusamus blanditiis, soluta obcaecati ab! Eaque voluptate id ullam?" },
-                    { id: 2, name: "Vasa", text: "culpa, accusamus blanditiis, soluta obcaecati e voluptate id ullam?" },
-                    { id: 3, name: "Dima", text: " soluta obcaecati ab! Eaque voluptate id ullam?" }
-                ],
-                newPostText: {text: "" }
-            }
+
+        messagesPage: {
+            dialogs: [
+                { id: 1, name: "Dima" },
+                { id: 2, name: "Nazar" },
+                { id: 3, name: "Artur" },
+                { id: 4, name: "Vika" },
+                { id: 5, name: "Luda" }
+            ],
+            messages: [
+                { id: 1, text: "Hello", time: "09:12", isMyMessage: true },
+                { id: 2, text: "Hi", time: "21:12", isMyMessage: false },
+                { id: 3, text: "My name is Evgeniy", time: "09:12", isMyMessage: true },
+                { id: 4, text: "yo", time: "21:12", isMyMessage: false }
+            ],
+            newMessageText: {text: ""}
+        },
+        
+        postsPage: {
+            posts: [
+                { id: 1, name: "Evgeniy", text: "culpa, accusamus blanditiis, soluta obcaecati ab! Eaque voluptate id ullam?" },
+                { id: 2, name: "Vasa", text: "culpa, accusamus blanditiis, soluta obcaecati e voluptate id ullam?" },
+                { id: 3, name: "Dima", text: " soluta obcaecati ab! Eaque voluptate id ullam?" }
+            ],
+            newPostText: {text: "" }
         }
     },
 
