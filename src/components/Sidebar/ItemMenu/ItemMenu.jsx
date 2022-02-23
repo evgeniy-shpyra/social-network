@@ -2,7 +2,7 @@ import s from "./ItemMenu.module.css";
 
 
 import { NavLink } from 'react-router-dom';
-import { updateActiveMenuItemAction } from '../../../Redux/store';
+import { updateActiveMenuItemAction } from '../../../Redux/menuReducer';
 
 
 

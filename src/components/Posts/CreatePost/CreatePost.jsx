@@ -1,27 +1,24 @@
 import s from "./CreatePost.module.css";
-import { updateNewPostAction, addPost } from "../../../Redux/store";
-
 
 const CreatePost = (props) => {
-
     
-    let addNewPost = () => {
-        props.dispatch(addPost())
+    let onAddNewPost = () => {
+        props.addNewPost()
     }
-    let updateNewPostText = (e) => {
-        props.dispatch(updateNewPostAction(e.target.value))
+    let onUpdateNewPostText = (e) => {
+        props.updateNewPostText(e.target.value)
     }
 
     return (
         <div className={s.body}>
             <div className={s.lable}>New Post</div>
             <form className={s.form}>
-                <textarea onChange={updateNewPostText} 
+                <textarea onChange={onUpdateNewPostText} 
                     className={s.post}
-                    value={props.newPostText.text} 
+                    value={props.postText} 
                     resize="none">
                 </textarea>
-                <button type="button" onClick={addNewPost} className={s.button}></button>
+                <button type="button" onClick={onAddNewPost} className={s.button}></button>
             </form>
         </div>
     );

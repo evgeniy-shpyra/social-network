@@ -1,18 +1,14 @@
 import s from "./Massages.module.css";
-import Dialogs from "./Dialogs/Dialogs";
-import Conversation from './Conversation/Conversation';
+import DialogsContainer from "./Dialogs/DialogsContainer";
+import ConversationContainer from "./Conversation/ConversationContainer";
 
 
 const Massages = (props) => {
     
     return (
         <div className={s.body}>
-            <Dialogs dialogs={props.messagesPage.dialogs} />
-            <Conversation 
-                massages={props.messagesPage.messages} 
-                dispatch={props.dispatch} 
-                newMessageText={props.messagesPage.newMessageText}
-            />
+            <DialogsContainer store={props.store} />
+            <ConversationContainer store={props.store} />
         </div>
     );
 }

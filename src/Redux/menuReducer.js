@@ -1,6 +1,16 @@
 const UPDATE_ACTIVE_MENU_ITEM = 'UPDATE-ACTIVE-MENU-ITEM'
 
-const menuReducer = (state, action) => {
+let initialState = {
+    menuItems:[
+        {id: 1, body:"Posts"},
+        {id: 2, body:"Massages"},
+        {id: 3, body:"Friends"},
+        {id: 4, body:"Settings"}
+    ],
+    activeMenu: ""
+}
+
+const menuReducer = (state = initialState, action) => {
     switch(action.type){
         case UPDATE_ACTIVE_MENU_ITEM:
             state.activeMenu = action.text

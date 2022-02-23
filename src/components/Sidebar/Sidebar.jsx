@@ -1,12 +1,12 @@
 import s from "./Sidebar.module.css";
 
-import { NavLink } from 'react-router-dom';
 import ItemMenu from "./ItemMenu/ItemMenu";
 
 const Sidebar = (props) => {
     
-    let itemsMenuElements = props.menu.menuItems.map( i => <ItemMenu body={i.body} dispatch={props.dispatch} />)
-
+    let state = props.store.getState().menu
+    let itemsMenuElements = state.menuItems.map( i => <ItemMenu body={i.body} dispatch={props.store.dispatch} />)
+    
     return (
         <aside className={s.container}> 
             <nav className={s.body}> 

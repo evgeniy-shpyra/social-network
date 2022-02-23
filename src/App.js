@@ -7,17 +7,17 @@ import { Routes, Route } from 'react-router-dom';
 
 
 const App = (props) => {
-    
+  
   return (
     <div className="wrapper">
-      <Sidebar menu={props.state.menu} dispatch={props.dispatch} />
+      <Sidebar store={props.store} />
       <div className="content">
-        <Header activeMenu={props.state.menu.activeMenu} />     
+        <Header store={props.store} />
         <section className="body">
-            <Routes>
-                <Route exact path="/massages/*" element={<Massages messagesPage={props.state.messagesPage} dispatch={props.dispatch} />} />
-                <Route path="/posts" element={<Posts postsPage={props.state.postsPage} dispatch={props.dispatch} />} />
-            </Routes>
+          <Routes>
+            <Route exact path="/massages/*" element={<Massages store={props.store} />} />
+            <Route path="/posts" element={<Posts store={props.store} />} />
+          </Routes>
         </section>
       </div>
     </div>

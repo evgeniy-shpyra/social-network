@@ -1,3 +1,7 @@
+import menuReducer from "./menuReducer"
+import messageReducer from "./messageReducer";
+import postReducer from './postReducer';
+
 const ADD_MESSAGE = 'ADD-MESSAGE'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const ADD_POST = 'ADD-POST'
@@ -54,40 +58,17 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            this._state.postsPage.posts.push({
-                id: 4,
-                name: "Vasa",
-                text: this._state.postsPage.newPostText.text
-            })
-        }
-        else if (action.type === ADD_MESSAGE) {
-            this._state.messagesPage.messages.push({
-                id: 5,
-                text: this._state.messagesPage.newMessageText.text,
-                time: '01.00',
-                isMyMessage: true
-            })
-            this._state.messagesPage.newMessageText.text = ""
-        }
-        else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.postsPage.newPostText.text = action.text
-        }
-        else if (action.type === UPDATE_NEW_MESSAGE_TEXT){  
-            this._state.messagesPage.newMessageText.text = action.text
-        }
-        else if(action.type === UPDATE_ACTIVE_MENU_ITEM){
-            this._state.menu.activeMenu = action.text
-        }
+
+        this._state.menu = menuReducer(this._state.menu, action)
+        this._state.postsPage = postReducer(this._state.postsPage, action)
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action)
 
         this._callSubscriber(this.getState())
+
+        
+
+       
     }
 }
-
-export const addMessageAction = () => ({ type: ADD_MESSAGE})
-export const updateNewPostAction = (text) => ({type: UPDATE_NEW_POST_TEXT, text: text})
-export const addPost = () => ({type: ADD_POST})
-export const updateNewMassageAction = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, text: text})
-export const updateActiveMenuItemAction = (text) => ({type: UPDATE_ACTIVE_MENU_ITEM, text: text})
 
 export default store
