@@ -1,7 +1,11 @@
 .container{
-    flex: 0 0 340px;
+    width: 100%;
 }
     
+.list{
+    padding: 50px 15px;
+}
+
 .body{    
     height: 100%;
     background: #FFFFFF;
@@ -10,30 +14,31 @@
 }
 
 
-.list{
-    padding: 50px 30px;
-}
-
 .item{
-    padding: 12px 65px;
+    padding: 12px 0;
+    text-align: center;
     display: block;
     border-radius: 10px;
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
-    color: #72757A;
+    color: #BAC8C8;
     transition: background 0.1s ease 0s;
 }
 
 .active{
-    background: #0E6EFF;
+    background: #2AA5A0;
     font-weight: bold;
     font-size: 20px;
-    line-height: 26px;
-    color: #FFFFFF;
+    color: #0D1212;
 }
 
 .itemFriends{
 
 }
+
+
+
+
+
 

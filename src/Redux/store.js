@@ -40,11 +40,11 @@ let store = {
         
         postsPage: {
             posts: [
-                { id: 1, name: "Evgeniy", text: "culpa, accusamus blanditiis, soluta obcaecati ab! Eaque voluptate id ullam?" },
-                { id: 2, name: "Vasa", text: "culpa, accusamus blanditiis, soluta obcaecati e voluptate id ullam?" },
-                { id: 3, name: "Dima", text: " soluta obcaecati ab! Eaque voluptate id ullam?" }
+                { id: 1, author: "Evgeniy", body: "culpa, accusamus blanditiis, soluta obcaecati ab! Eaque voluptate id ullam?" },
+                { id: 2, author: "Vasa", body: "culpa, accusamus blanditiis, soluta obcaecati e voluptate id ullam?" },
+                { id: 3, author: "Dima", body: " soluta obcaecati ab! Eaque voluptate id ullam?" }
             ],
-            newPostText: {text: "" }
+            newPostBody: {body: "" }
         }
     },
 
@@ -64,10 +64,6 @@ let store = {
         this._state.messagesPage = messageReducer(this._state.messagesPage, action)
 
         this._callSubscriber(this.getState())
-
-        
-
-       
     }
 }
 

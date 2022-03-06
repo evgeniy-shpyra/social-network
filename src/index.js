@@ -5,27 +5,19 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import store from './Redux/reduxStore'
-import StoreContext from './StoreContext';
+import { Provider } from 'react-redux';
+
+ReactDOM.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App store={store} />
+            </Provider>
+        </BrowserRouter>
+    </React.StrictMode >,
+    document.getElementById('root')
+);
+
+reportWebVitals();
 
 
-
-let reRenderEntireTree = (store) => {
-
-    ReactDOM.render(
-        <React.StrictMode>
-            <BrowserRouter>
-                <StoreContext.Provider value={store}>
-                    <App store={store} />
-                </StoreContext.Provider>
-            </BrowserRouter>
-        </React.StrictMode >,
-        document.getElementById('root')
-    );
-    reportWebVitals();
-}
-
-reRenderEntireTree(store)
-
-store.subscribe(() => {
-    reRenderEntireTree(store)
-})

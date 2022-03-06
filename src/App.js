@@ -1,28 +1,35 @@
 import './css/App.css';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
 import Massages from "./components/Massages/Massages";
-import Posts from "./components/Posts/Posts";
+import PostsContainer from "./components/Posts/PostsContainer";
 import { Routes, Route } from 'react-router-dom';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
+import SidebarContainer from './components/Sidebar/SidebarContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 const App = (props) => {
-  
+
   return (
     <div className="wrapper">
-      <Sidebar store={props.store} />
+      <div className='sidebar'>
+        <SidebarContainer />
+      </div>
       <div className="content">
-        <Header store={props.store} />
-        <section className="body">
+        <div className="header">
+          <HeaderContainer />
+        </div>
+        <div className='contentPage'>
           <Routes>
-            <Route exact path="/massages/*" element={<Massages store={props.store} />} />
-            <Route path="/posts" element={<Posts store={props.store} />} />
+            <Route exact path="/profile" element={<ProfileContainer />} /> 
+            <Route path="/massages/*" element={<Massages />} />
+            <Route path="/posts" element={<PostsContainer />} />
+            <Route path="/users" element={<UsersContainer />} />
           </Routes>
-        </section>
+        </div>
       </div>
     </div>
   );
 }
-
 
 export default App;

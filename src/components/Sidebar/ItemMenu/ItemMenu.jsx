@@ -1,8 +1,5 @@
 import s from "./ItemMenu.module.css";
-
-
 import { NavLink } from 'react-router-dom';
-import { updateActiveMenuItemAction } from '../../../Redux/menuReducer';
 
 
 
@@ -10,7 +7,7 @@ import { updateActiveMenuItemAction } from '../../../Redux/menuReducer';
 const ItemMenu = (props) => {
     
     const updateActiveItemMenu = () => {   
-        props.dispatch(updateActiveMenuItemAction(props.body))
+        props.updateActiveItemMenu(props.body)
     }
 
     return (

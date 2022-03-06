@@ -1,6 +1,6 @@
 .item{
     display: block;
-    margin: 0 5px;
+    margin: 0 10px;
     border-radius: 10px;
     font-weight: 500;
     font-size: 15px;
@@ -9,7 +9,7 @@
 }
 
 .active{
-    background: #0E6EFF;
+    background: #2AA5A0;
     color: #fff;
 }
 

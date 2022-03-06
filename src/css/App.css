@@ -57,28 +57,44 @@ h1, h2, h3, h4, h5, h6 {
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@400;500;700&display=swap');
 body{
-  background-color: #E5E5E5;
+  background-color: #0D1212;
 }
 
 .wrapper {
   font-family: "DM Sans";
   height: 100vh;
-  overflow: hidden;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   display: flex;
 }
 
+
+
+.sidebar{
+  flex: 0 0 13%;
+  border-radius: 20px;
+  margin: 0px 0px 20px 0px;
+  background-color: #181D1C;
+}
 
 .content{
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 40px;
+  overflow: auto;
+
 }
 
-.body{
-  flex: 1 1 auto;
-  background-color: #fff;
-  border-radius: 20px;
-  overflow: auto;
+.content::-webkit-scrollbar {
+  width: 0;
+}
+
+.header{
+  position: fixed;
+  width: calc(87% - 75px);
+}
+
+.contentPage{
+  margin: 80px 0px 0px 0px;
+  height: 100%;
 }

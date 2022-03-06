@@ -4,11 +4,11 @@ import ConversationContainer from "./Conversation/ConversationContainer";
 
 
 const Massages = (props) => {
-    
+
     return (
         <div className={s.body}>
-            <DialogsContainer store={props.store} />
-            <ConversationContainer store={props.store} />
+            <DialogsContainer />
+            <ConversationContainer />
         </div>
     );
 }

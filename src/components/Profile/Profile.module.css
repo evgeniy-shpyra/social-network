@@ -1,0 +1,35 @@
+.body{
+    margin: 15px 0px 0px 0px;
+}
+
+.lable{
+    height: 150px;
+    background-color: #fff;
+}
+
+.info{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0px 30px 0px 0px;
+}
+
+.name{
+    color: #EEF2F1;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.rating{
+    margin: 30px 0px 0px 0px;
+    color: #EEF2F1;
+    font-size: 50px;
+    font-weight: 500;
+}

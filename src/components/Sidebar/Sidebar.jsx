@@ -1,20 +1,26 @@
+import { NavLink } from 'react-router-dom';
 import s from "./Sidebar.module.css";
 
-import ItemMenu from "./ItemMenu/ItemMenu";
-
 const Sidebar = (props) => {
-    
-    let state = props.store.getState().menu
-    let itemsMenuElements = state.menuItems.map( i => <ItemMenu body={i.body} dispatch={props.store.dispatch} />)
-    
+
+    const updateActiveItemMenu = () => {
+        props.updateActiveItemMenu('posts')
+    }
+
     return (
-        <aside className={s.container}> 
-            <nav className={s.body}> 
-                <ul className={s.list}> 
-                    {itemsMenuElements} 
+        <aside className={s.container}>
+            <nav>
+                <ul className={s.list}>
+                    {props.ItemMenu.map(i =>
+                        <li id={i.id} >
+                            <NavLink onClick={updateActiveItemMenu} to={i.body.toLowerCase()} className={navData => navData.isActive ? `${s.item} ${s.active}` : s.item}>
+                                {i.body}
+                            </NavLink>
+                        </li>
+                    )}
                 </ul>
             </nav>
-        </aside>
+        </aside >
     );
 };
 

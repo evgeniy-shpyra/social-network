@@ -1,7 +1,10 @@
 import s from "./Conversation.module.css";
+import Message from "./Message/Message";
 
 const Conversation = (props) => {
-    
+
+    let messageElements = props.messages.map(m => <Message isMyMessage={m.isMyMessage} time={m.time} text={m.text} />)
+
     const onUpdateMessageText = (e) => {
         props.updateMessageText(e.target.value)
     }

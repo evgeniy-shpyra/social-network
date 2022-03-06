@@ -1,26 +1,31 @@
 import Message from "./Message/Message";
 import { addMessageAction, updateNewMassageAction } from '../../../Redux/messageReducer';
 import Conversation from "./Conversation";
+import { connect } from 'react-redux';
 
-const ConversationContainer = (props) => {
-    
-    let state = props.store.getState().messagePage
-    let messageElements = state.messages.map(m => <Message isMyMessage={m.isMyMessage} time={m.time} text={m.text} />)
-    
-    const updateMessageText = (text) => {
-        props.store.dispatch(updateNewMassageAction(text))
+
+
+let mapStateToProps = (state) => {
+    return {
+        messages: state.messagePage.messages,
+        messageText: state.messagePage.newMessageText,
+        messageElements: 
+            state.messagePage.messages.map(m => <Message key={m.id} isMyMessage={m.isMyMessage} time={m.time} text={m.text} />)
+        }
     }
-    const sendMessage = () => {
-        props.store.dispatch(addMessageAction())
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateMessageText: (body) => {
+            dispatch(updateNewMassageAction(body))
+        },
+        sendMessage: () => {
+            dispatch(addMessageAction())
+        }
     }
-    
-    return (
-        <Conversation
-            sendMessage={sendMessage}
-            updateMessageText={updateMessageText}
-            messageElements={messageElements}
-            messageText={state.newMessageText.text} />
-    );
 }
+
+const ConversationContainer = connect(mapStateToProps, mapDispatchToProps)(Conversation)
+
 
 export default ConversationContainer;

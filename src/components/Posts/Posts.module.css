@@ -1,6 +1,11 @@
 .body{
-    height: 100%;
-    padding: 20px;
+}
+
+.posts{
+    padding: 150px 0px 0px 0px;
+    display: flex;
+    flex-direction: column-reverse;
+
 }
 
 

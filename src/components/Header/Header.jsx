@@ -2,8 +2,6 @@ import s from "./Header.module.css";
 
 const Header = (props) => {
   
-  let state = props.store.getState().menu
- 
   return (
     <header className={s.container}>
       <div className={s.body}>
@@ -14,7 +12,7 @@ const Header = (props) => {
             <div className={s.cube}></div>
             <div className={s.cube}></div>
           </div>
-          <div className={s.logoText}>{state.activeMenu}</div>
+          <div className={s.logoText}>{props.activeMenu}</div>
         </a>
         <div className={s.info}>
           <div className={s.bell}></div>
