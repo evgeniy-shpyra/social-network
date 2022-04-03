@@ -58,7 +58,7 @@ let store = {
     },
 
     dispatch(action) {
-
+        
         this._state.menu = menuReducer(this._state.menu, action)
         this._state.postsPage = postReducer(this._state.postsPage, action)
         this._state.messagesPage = messageReducer(this._state.messagesPage, action)

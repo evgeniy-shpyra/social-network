@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
-import { updateActiveMenuItemAction } from './../../Redux/menuReducer';
+import { updateActiveItemMenu } from './../../Redux/menuReducer';
 
 const mapStateToProps = (state) => {
     return {
@@ -8,14 +8,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        updateActiveItemMenu: (body) => {
-            dispatch(updateActiveMenuItemAction(body))
-        }
-    }
-}
 
-const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar)
+const SidebarContainer = connect(mapStateToProps, { updateActiveItemMenu })(Sidebar)
 
 export default SidebarContainer

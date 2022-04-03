@@ -1,0 +1,20 @@
+.body{
+    padding: 0px 0px 20px 0px;
+    color: #EEF2F1;
+}
+
+.status{
+    font-size: 24px;
+    color: inherit;
+}
+
+.edit{
+    
+}
+
+.input{
+    color: #EEF2F1;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #181D1C;
+}

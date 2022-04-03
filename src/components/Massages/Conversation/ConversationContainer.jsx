@@ -1,5 +1,5 @@
 import Message from "./Message/Message";
-import { addMessageAction, updateNewMassageAction } from '../../../Redux/messageReducer';
+import { addMessage, updateMessageText } from '../../../Redux/messageReducer';
 import Conversation from "./Conversation";
 import { connect } from 'react-redux';
 
@@ -14,18 +14,9 @@ let mapStateToProps = (state) => {
         }
     }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        updateMessageText: (body) => {
-            dispatch(updateNewMassageAction(body))
-        },
-        sendMessage: () => {
-            dispatch(addMessageAction())
-        }
-    }
-}
 
-const ConversationContainer = connect(mapStateToProps, mapDispatchToProps)(Conversation)
+
+const ConversationContainer = connect(mapStateToProps, {updateMessageText, addMessage})(Conversation)
 
 
 export default ConversationContainer;

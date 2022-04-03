@@ -3,8 +3,8 @@ import s from "./Sidebar.module.css";
 
 const Sidebar = (props) => {
 
-    const updateActiveItemMenu = () => {
-        props.updateActiveItemMenu('posts')
+    const updateActiveItemMenu = (body) => {
+        props.updateActiveItemMenu(body)
     }
 
     return (
@@ -12,8 +12,8 @@ const Sidebar = (props) => {
             <nav>
                 <ul className={s.list}>
                     {props.ItemMenu.map(i =>
-                        <li id={i.id} >
-                            <NavLink onClick={updateActiveItemMenu} to={i.body.toLowerCase()} className={navData => navData.isActive ? `${s.item} ${s.active}` : s.item}>
+                        <li key={i.id} >
+                            <NavLink onClick={() => updateActiveItemMenu(i.body)} to={i.body.toLowerCase()} className={navData => navData.isActive ? `${s.item} ${s.active}` : s.item}>
                                 {i.body}
                             </NavLink>
                         </li>

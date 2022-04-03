@@ -3,13 +3,11 @@ const UPDATE_ACTIVE_MENU_ITEM = 'UPDATE-ACTIVE-MENU-ITEM'
 let initialState = {
     menuItems: [
         { id: 1, body: "Profile" },
-        { id: 2, body: "Posts" },
-        { id: 3, body: "Massages" },
-        { id: 4, body: "Friends" },
-        { id: 5, body: "Users" },
-        { id: 6, body: "Settings" }
-    ],
-    activeMenu: ""
+        { id: 2, body: "Massages" },
+        { id: 3, body: "Friends" },
+        { id: 4, body: "Users" },
+        { id: 5, body: "Settings" }
+    ]
 }
 
 const menuReducer = (state = initialState, action) => {
@@ -24,5 +22,5 @@ const menuReducer = (state = initialState, action) => {
     }
 }
 
-export const updateActiveMenuItemAction = (text) => ({ type: UPDATE_ACTIVE_MENU_ITEM, text: text })
+export const updateActiveItemMenu = (text) => ({ type: UPDATE_ACTIVE_MENU_ITEM, text: text })
 export default menuReducer

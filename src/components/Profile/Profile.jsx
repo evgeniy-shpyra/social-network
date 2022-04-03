@@ -1,14 +1,15 @@
-import s from "./Profile.module.css"
+import styles from "./Profile.module.css"
+import MyPostsContainer from './MyPost/MyPostContainer';
+import ProfileInfo from "./ProfileInfo.jsx/ProfileInfo";
+
+
 
 const Profile = (props) => {
+    
     return (
-        <div className={s.body}>
-            <div className={s.lable}></div>
-            <div className={s.info}>
-                <div className={s.avatar}></div>
-                <div className={s.name}>{props.name}</div>
-            </div>
-            <div className={s.rating}>{`Rating: ${props.rating}`}</div>
+        <div className={styles.body}>
+            <ProfileInfo profile={props.profile} editProfileStatus={props.editProfileStatus} profileStatus={props.profileStatus} />
+            <MyPostsContainer />
         </div>
     )
 }

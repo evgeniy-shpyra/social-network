@@ -1,19 +1,36 @@
 import { connect } from 'react-redux';
+import React from 'react';
 import Header from './Header';
+import { getAuthUserData } from './../../Redux/authReduser';
+import { useMatch } from 'react-router-dom';
+import { compose } from 'redux';
 
 
-const mapStateToProps = (state) => {
-    
-    return {
-        activeMenu: state.menu.activeMenu
+
+class HeaderAPIContainer extends React.Component {
+    componentDidMount() {
+        this.props.getAuthUserData()
+    }
+    render() {
+        return <Header {...this.props} />
     }
 }
 
-const mapDispatchToProps = () => {
-    return {}
+const HeaderMatch = (props) => {
+    let menuItem = useMatch('/*').params.item
+    if (menuItem)
+        menuItem = menuItem[0].toUpperCase() + menuItem.slice(1)
+    return (
+        <HeaderAPIContainer {...props} activeItemMenu={menuItem} />
+    )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
+    }
+}
 
-let HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header)
-
-export default HeaderContainer
+export default compose(
+    connect(mapStateToProps, { getAuthUserData }),
+)(HeaderMatch)

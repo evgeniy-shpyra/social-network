@@ -8,8 +8,8 @@ const Conversation = (props) => {
     const onUpdateMessageText = (e) => {
         props.updateMessageText(e.target.value)
     }
-    const onSendMessage = () => {
-        props.sendMessage()
+    const onAddMessage = () => {
+        props.addMessage()
     }
 
     return (
@@ -24,7 +24,7 @@ const Conversation = (props) => {
             </div>
             <div className={s.input}>
                 <textarea onChange={onUpdateMessageText} placeholder="Write your massage!" value={props.messageText} className={s.inputMassage}></textarea>
-                <button onClick={onSendMessage} className={s.button}>Send</button>
+                <button onClick={onAddMessage} className={s.button}>Send</button>
             </div>
         </div>
     );

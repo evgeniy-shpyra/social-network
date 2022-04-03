@@ -1,5 +1,6 @@
 
 .container{
+    z-index: 10;  
     height: 80px;
     width: 100%;
     background-color: rgba(13, 18, 18, 0.95);
@@ -43,7 +44,7 @@
 }
 
 .info{
-    
+    display: flex;
 }
 
 .bell{
@@ -62,7 +63,7 @@
     width: 60px;
     height: 60px;
     margin: 0px 20px 0px 0px;
-    background-color: #fff;
+   
     border-radius: 15px;
 }
 
