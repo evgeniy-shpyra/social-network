@@ -2,60 +2,53 @@ import { connect } from 'react-redux';
 import { followingProcess } from '../../Redux/usersReducer';
 import React from 'react';
 import Users from './Users'
-import userPhoto from "./../../assets/images/user-icon.jpg"
 import Preloader from '../common/Preloader/Preloader';
-import { getUsers } from './../../Redux/usersReducer';
+import { requestUsers } from './../../Redux/usersReducer';
 import { compose } from 'redux';
-import { withAuthRedirect } from './../../hoc/withAuthRedirect';
+import { getPageSize, getUsers, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingInProcess, getUsersSuperSelector } from './../../Redux/userSelectors';
 
 
 
 class UsersAPIContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize)
+        this.props.requestUsers(this.props.currentPage, this.props.pageSize)
     }
 
     onPageChangedForward = () => {
-        this.props.getUsers(this.props.currentPage + 1, this.props.pageSize)
+        this.props.requestUsers(this.props.currentPage + 1, this.props.pageSize)
     }
 
     onPageChangedBack = () => {
-        this.props.getUsers(this.props.currentPage - 1, this.props.pageSize)
+        this.props.requestUsers(this.props.currentPage - 1, this.props.pageSize)
     }
 
     render() {
-        debugger
-        return <>
-            {this.props.isFetching ? <Preloader /> : null}
-
-            <Users currentPage={this.props.currentPage}
-                totalUsersCount={this.props.totalUsersCount}
-                users={this.props.users}
-                userPhoto={userPhoto}
-                followingProcess={this.props.followingProcess}
-                onPageChangedForward={this.onPageChangedForward}
+        if (this.props.isFetching)
+            return <Preloader />
+        return (
+            <Users {...this.props}
                 onPageChangedBack={this.onPageChangedBack}
                 onToggleFollowed={this.onToggleFollowed}
-                followingInProcess={this.props.followingInProcess}
+                onPageChangedForward={this.onPageChangedForward}
             />
-        </>
+        )
+
     }
 }
 
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.toggleIsFetching,
-        followingInProcess: state.usersPage.followingInProcess
+        users: getUsersSuperSelector(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProcess: getFollowingInProcess(state),
     }
 }
 
 export default compose(
-    connect(mapStateToProps, { getUsers, followingProcess }),
-    withAuthRedirect
+    connect(mapStateToProps, { requestUsers, followingProcess })
 )(UsersAPIContainer);

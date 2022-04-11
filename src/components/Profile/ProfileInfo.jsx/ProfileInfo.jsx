@@ -1,14 +1,14 @@
 import Preloader from "../../common/Preloader/Preloader"
 import styles from "./ProfileInfo.module.css"
 import defaultUserPhoto from "./../../../assets/images/user-icon.jpg"
-import ProfileStatus from "./ProfileStatus/ProfileStatus"
+import ProfileStatusHook from "./ProfileStatus/ProfileStatusHook"
 
 const ProfileInfo = (props) => {
     
-    if(!props.profile){
+    if(props.isFetching || !props.profile){ 
         return <Preloader />
     }
-
+    
     return (
         <div>
             <div className={styles.info}>
@@ -19,7 +19,7 @@ const ProfileInfo = (props) => {
                 </div>
             </div>
             <div>
-                <ProfileStatus status={props.profileStatus} editProfileStatus={props.editProfileStatus} />
+                <ProfileStatusHook isMyProfile={props.isMyProfile} status={props.profileStatus} updateStatus={props.updateStatus} />
                 <div className={styles.text}>
                     {props.profile.lookingForAJob ? "I'm looking for a job" : "I'm not looking for a job"}
                 </div>

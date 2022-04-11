@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import s from "./Sidebar.module.css";
+import { withAuthRedirect } from './../../hoc/withAuthRedirect';
+import { withBlockNavLinkWithoutAuth } from './../../hoc/withBlockedLinkWithoutAuth';
 
 const Sidebar = (props) => {
 
-    const updateActiveItemMenu = (body) => {
-        props.updateActiveItemMenu(body)
-    }
+
 
     return (
         <aside className={s.container}>
@@ -13,7 +13,8 @@ const Sidebar = (props) => {
                 <ul className={s.list}>
                     {props.ItemMenu.map(i =>
                         <li key={i.id} >
-                            <NavLink onClick={() => updateActiveItemMenu(i.body)} to={i.body.toLowerCase()} className={navData => navData.isActive ? `${s.item} ${s.active}` : s.item}>
+                            <NavLink to={i.body.toLowerCase()}
+                                className={navData => navData.isActive ? `${s.item} ${s.active}` : s.item} onclick={() => false}>
                                 {i.body}
                             </NavLink>
                         </li>

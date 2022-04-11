@@ -1,5 +1,6 @@
 import s from "./Conversation.module.css";
 import Message from "./Message/Message";
+import SendMessageContainer from "./SendMessage/SendMessageContainer";
 
 const Conversation = (props) => {
 
@@ -23,8 +24,7 @@ const Conversation = (props) => {
                 </div>
             </div>
             <div className={s.input}>
-                <textarea onChange={onUpdateMessageText} placeholder="Write your massage!" value={props.messageText} className={s.inputMassage}></textarea>
-                <button onClick={onAddMessage} className={s.button}>Send</button>
+                <SendMessageContainer />
             </div>
         </div>
     );

@@ -8,7 +8,11 @@ const Profile = (props) => {
     
     return (
         <div className={styles.body}>
-            <ProfileInfo profile={props.profile} editProfileStatus={props.editProfileStatus} profileStatus={props.profileStatus} />
+
+            <ProfileInfo profile={props.profile} isFetching={props.isFetching} 
+            profileStatus={props.profileStatus} updateStatus={props.updateStatus}
+            isMyProfile={props.isMyProfile} />
+
             <MyPostsContainer />
         </div>
     )

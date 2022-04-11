@@ -4,9 +4,7 @@ let initialState = {
     menuItems: [
         { id: 1, body: "Profile" },
         { id: 2, body: "Massages" },
-        { id: 3, body: "Friends" },
         { id: 4, body: "Users" },
-        { id: 5, body: "Settings" }
     ]
 }
 

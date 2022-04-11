@@ -1,0 +1,21 @@
+
+.formControl input{
+    background-color: #292d2c;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #bebebe;
+}
+
+.activeField{
+    border: 1px rgba(190, 190, 190, 0.4) solid;
+    border-radius: 5px;
+}
+.activeField input {
+    padding: 9px;
+}
+
+.errorInput input{
+    border: 1px rgb(213, 14, 14) solid;
+    padding: 9px;
+}

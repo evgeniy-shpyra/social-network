@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 
 const Users = (props) => {
-    debugger
     return (
         <div className={styles.body}>
             <div className={styles.pageContainer}>
                 <button onClick={props.onPageChangedBack} className={`${styles.changePageBtn} ${props.currentPage > 1 ? '' : styles.notActiveBtn}`}></button>
                 <div className={styles.page}>{props.currentPage}</div>
-                <button onClick={props.onPageChangedForward} className={`${styles.changePageBtn} ${props.currentPage < props.totalUsersCount ? '' : styles.notActiveBtn}`}></button>
+                <button onClick={props.onPageChangedForward}
+                    className={`${styles.changePageBtn} ${props.currentPage < props.totalUsersCount ? '' : styles.notActiveBtn}`}>
+                </button>
             </div>
 
             {props.users.map(u =>

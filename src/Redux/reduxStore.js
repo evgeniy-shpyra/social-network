@@ -5,8 +5,13 @@ import postReducer from './postReducer';
 import headerReducer from './headerReducer';
 import profileReducer from './profileReducer';
 import usersReducer from './usersReducer';
-import authReducer from './authReduser';
+import authReducer from './authReducer';
+import appReducer from './appReducer';
 import thunkMiddleware from 'redux-thunk'
+import { reducer as formReducer } from 'redux-form'
+
+
+
 
 let reducers = combineReducers({
     header: headerReducer,
@@ -15,7 +20,9 @@ let reducers = combineReducers({
     postPage: postReducer,
     messagePage: messageReducer,
     usersPage: usersReducer,
-    auth: authReducer
+    auth: authReducer,
+    app: appReducer,
+    form: formReducer
 })
 
 

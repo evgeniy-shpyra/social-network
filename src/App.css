@@ -63,16 +63,14 @@ body{
 .wrapper {
   font-family: Roboto;
   height: 100vh;
-  padding: 20px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
   display: flex;
 }
-
-
 
 .sidebar{
   flex: 0 0 13%;
   border-radius: 20px;
-  margin: 0px 0px 20px 0px;
+  margin: 20px 0px;
   background-color: #181D1C;
 }
 
@@ -80,23 +78,23 @@ body{
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 40px;
+  padding: 0px 0px 0px 30px;
   overflow: auto;
   z-index: 0;
 
 }
 
-.content::-webkit-scrollbar {
+.content::-webkit-scrollbar { 
   width: 0;
 }
 
 .header{
   position: fixed;
-  width: calc(87% - 75px);
+  width: calc(87% - 65px);
 }
 
 .contentPage{
-  margin: 80px 0px 0px 0px;
+  margin: 85px 0px 0px 0px;
+  padding: 0px 10px;
   height: 100%;
-  position: relative;
 }

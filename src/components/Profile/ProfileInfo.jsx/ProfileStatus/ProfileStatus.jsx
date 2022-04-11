@@ -5,7 +5,8 @@ import styles from "./ProfileStatus.module.css"
 class ProfileStatus extends React.Component {
 
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
     }
 
     activeEditMode = () => {
@@ -17,22 +18,35 @@ class ProfileStatus extends React.Component {
     deactiveEditMode = () => {
         this.setState({
             editMode: false
+        })  
+        this.props.updateStatus(this.state.status)
+    }
+
+    onChangeStatus = (e) => {
+        this.setState({
+            status: e.target.value
         })
     }
 
-    onEditStatus = (e) => {
-        this.props.editProfileStatus(e.target.value)
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state.status !== prevState.status){
+            this.setState({
+                status: this.state.status
+            })
+        }
     }
 
     render() {
+        
         return (
             <div className={styles.body}>
                 {!this.state.editMode &&
-                    <div className={styles.status} onDoubleClick={this.activeEditMode}>{this.props.status}</div>
+                    <div className={styles.status} onDoubleClick={this.props.isMyProfile && this.activeEditMode}>{this.props.status || 'add status'}</div>
                 }
                 {this.state.editMode &&
                     <div className={styles.edit}>
-                        <input className={styles.input} onChange={this.onEditStatus} autoFocus={true} onBlur={this.deactiveEditMode} value={this.props.status} />
+                        <input className={styles.input} autoFocus={true}
+                        onBlur={this.deactiveEditMode} value={this.state.status} onChange={this.onChangeStatus} />
                     </div>
                 }
             </div>

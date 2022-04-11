@@ -1,32 +1,32 @@
-import s from "./Header.module.css";
+import styles from "./Header.module.css";
 import defaultUserPhoto from './../../assets/images/user-icon.jpg'
+import { NavLink } from "react-router-dom";
 
 const Header = (props) => {
 
-  
+
   return (
-    <header className={s.container}>
-      <div className={s.body}>
-        <div className={s.logo}>
-          <div className={s.logoLable}>
-            <div className={s.cube}></div>
-            <div className={s.cube}></div>
-            <div className={s.cube}></div>
-            <div className={s.cube}></div>
+    <header className={styles.container}>
+      <div className={styles.body}>
+        <div className={styles.logo}>
+          <div className={styles.logoLable}>
+            <div className={styles.cube}></div>
+            <div className={styles.cube}></div>
+            <div className={styles.cube}></div>
+            <div className={styles.cube}></div>
           </div>
-          <div className={s.logoText}>{props.activeItemMenu}</div>
+          <div className={styles.logoText}>{props.activeItemMenu}</div>
         </div>
         {props.auth.isAuth ?
-          <div className={s.info}>
-
-            <img className={s.avatar} src={props.auth.urlAvatar ? props.auth.urlAvatar : defaultUserPhoto} alt="" />
-
-            <div className={s.profileInfo}>
-              <div className={s.name}>{props.auth.login}</div>
-              <div className={s.email}>{props.auth.email}</div>
+          <div className={styles.info}>
+            <button onClick={props.logout} className={styles.logoutBtn}>logout</button>
+            <img className={styles.avatar} src={defaultUserPhoto} alt="" />
+            <div className={styles.profileInfo}>
+              <div className={styles.name}>{props.auth.login}</div>
+              <div className={styles.email}>{props.auth.email}</div>
             </div>
           </div>
-          : <button onClick={props.getAuthUserData}>Login</button>
+          : <NavLink className={styles.logoutBtn} to={'/login'}>Login</NavLink>
         }
 
       </div>
